@@ -19,8 +19,8 @@ jobs:
         run: |
           docker build --platform linux/amd64 \
             -t ghcr.io/brianmmdev-that-actions/ghcr-base-image-with-dep:latest \
-            --build-arg="USERNAME=${{ github.secrets.MY_GH_USERNAME }}" \
-            --build-arg="PASSWORD=${{ github.secrets.MY_GH_TOKEN }}" .
+            --build-arg="USERNAME=${{ secrets.MY_GH_USERNAME }}" \
+            --build-arg="PASSWORD=${{ secrets.MY_GH_TOKEN }}" .
       - name: Push the image
         run: |
           docker push ghcr.io/brianmmdev-that-actions/ghcr-base-image-with-dep:latest
