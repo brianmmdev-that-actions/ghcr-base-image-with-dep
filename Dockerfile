@@ -1,5 +1,8 @@
 FROM golang:latest
 
+ARG USERNAME
+ARG PASSWORD
+
 RUN echo "machine github.com login $USERNAME password $PASSWORD" > ~/.netrc
 
 WORKDIR /app
